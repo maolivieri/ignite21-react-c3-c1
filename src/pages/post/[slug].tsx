@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { format, parseISO } from 'date-fns';
@@ -14,6 +14,7 @@ import commonStyles from '../../styles/common.module.scss';
 import styles from './post.module.scss';
 
 interface Post {
+  last_publication_date: string | null;
   first_publication_date: string | null;
   data: {
     title: string;
@@ -35,6 +36,18 @@ interface PostProps {
 }
 
 const Post: FC<PostProps> = ({ post }) => {
+  useEffect(() => {
+    let script = document.createElement('script');
+    let anchor = document.getElementById('inject-comments-for-uterances');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.setAttribute('async', true);
+    script.setAttribute('repo', '[ENTER REPO HERE]');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('theme', 'github-light');
+    anchor.appendChild(script);
+  });
+
   const router = useRouter();
 
   if (router.isFallback) {
@@ -62,6 +75,17 @@ const Post: FC<PostProps> = ({ post }) => {
           <FiClock /> <p>4 min</p>
         </div>
       </div>
+
+      <i className={styles.edit}>
+        *editado em
+        {format(
+          parseISO(post.last_publication_date),
+          " dd MMM yyyy, 'às' HH:mm",
+          {
+            locale: ptBR,
+          }
+        )}
+      </i>
       {post.data.content.map(paragraph => (
         <div className={styles.postContent}>
           <div dangerouslySetInnerHTML={{ __html: paragraph.heading }} />
@@ -70,6 +94,18 @@ const Post: FC<PostProps> = ({ post }) => {
           ))}
         </div>
       ))}
+      <br />
+      <hr />
+      <br />
+      <div>
+        <div>
+          <p>Next Post</p>
+        </div>
+        <div>
+          <p>Prev Post</p>
+        </div>
+      </div>
+      <div id="inject-comments-for-uterances"></div>
     </div>
   );
 };

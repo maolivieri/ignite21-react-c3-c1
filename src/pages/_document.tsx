@@ -17,6 +17,14 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        <script
+          src="https://utteranc.es/client.js"
+          repo="maolivieri/ignite21-react-c3-c1"
+          issue-term="pathname"
+          theme="github-dark"
+          crossorigin="anonymous"
+          async
+        />
       </Html>
     );
   }
