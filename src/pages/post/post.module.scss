@@ -1,1 +1,44 @@
-// TODO
+.banner {
+  max-height: 30vh;
+}
+
+.title {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 58px;
+  /* identical to box height */
+
+  letter-spacing: -0.5px;
+
+  /* Heading */
+
+  color: #f8f8f8;
+}
+
+.titleFooter {
+  display: flex;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    color: #f8f8f8;
+
+    p {
+      color: #f8f8f8;
+      margin-left: 0.6rem;
+    }
+  }
+}
+
+.postContent {
+  font-family: Inter;
+  margin-top: 2rem;
+
+  text-align: justify;
+
+  color: #f8f8f8;
+}
