@@ -1,5 +1,7 @@
 
-  ## spacetraveling - Ignite
+![cover](https://i.ibb.co/K7P6ghJ/Capa-6.png)
+ 
+## spacetraveling - Ignite
   Project created during the [@Rocketseat](https://www.rocketseat.com.br/) Ignite course as chapter III challenge.
   
   #### --- Features ---
