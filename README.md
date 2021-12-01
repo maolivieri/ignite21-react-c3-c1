@@ -5,11 +5,11 @@
   Project created during the [@Rocketseat](https://www.rocketseat.com.br/) Ignite course as chapter III challenge.
   
   #### --- Features ---
-  - Google and Apple login.
-  - Add transactions.
-  - List transactions.
-  - Check summaries.s
-  - Find reports and expenses charts.
+  - Find a post.
+  - Read the post.
+  - Signup with Github.
+  - Pay with Stripe to have access to full content.
+  - Add comments to posts.
 
 # Screenshots
 
